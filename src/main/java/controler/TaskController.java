@@ -57,15 +57,20 @@ public class TaskController {
                 +"notes = ?"
                 +"deadline = ?"
                 +"createdAt = ?"
-                +"updatedAt = ?";
+                +"updatedAt = ?"
+                +"WHERE id = ?";
         
         Connection connection = null;
         PreparedStatement statement = null;
         
         try {
-        
+            //Estabelecendo a conexão com o Banco de Dados
             connection = connectionFactory.getConnection();
+            
+            //Preparando a query
             statement = connection.prepareStatement(sql);
+            
+            //Setando os valores do statement
             statement.setInt(1, task.getIdProject());
             statement.setString(2, task.getName());
             statement.setString(3, task.getDescription());
@@ -74,6 +79,9 @@ public class TaskController {
             statement.setDate(6, new Date(task.getDeadline().getTime()));
             statement.setDate(7, new Date(task.getCreatedAt().getTime()));
             statement.setDate(8, new Date(task.getUpdatedAt().getTime()));
+            statement.setInt(9, task.getId());
+            
+            //Executando a query
             statement.execute();
         
         }catch (Exception ex) {
@@ -93,10 +101,18 @@ public class TaskController {
         PreparedStatement statement = null;
         
         try {
+            //Estabelecendo a conexão com o Banco de Dados
             connection = connectionFactory.getConnection();
+            
+            //Preparando a query
             statement = connection.prepareStatement(sql);
+            
+            //Setando os valores do statement
             statement.setInt(1, taskId);
+            
+            //Executando a query
             statement.execute();
+            
         } catch (Exception ex) {
             throw new RuntimeException("Erro ao deletar a tarefa" + ex.getMessage(), ex);
         } finally {
@@ -117,11 +133,19 @@ public class TaskController {
         List<Task> tasks = new ArrayList<Task>();
         
         try {
+            //Estabelecendo a conexão com o Banco de Dados
             connection = connectionFactory.getConnection();
+            
+            //Preparando a query
             statement = connection.prepareStatement(sql);
+            
+            //Setando os valores que corresponde ao filtro de busca
             statement.setInt(1, idProject);
+            
+            //Valor retornado pela execução da query
             resultSet = statement.executeQuery();
             
+            //Enquanto houverem valores a serem percorridos do meu resultSet
             while(resultSet.next()){
                 Task task = new Task();
                 task.setId(resultSet.getInt("id"));
