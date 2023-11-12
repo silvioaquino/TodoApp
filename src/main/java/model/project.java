@@ -1,15 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.util.Date;
-/**
- *
- * @author Suporte
- */
+
 public class Project {
     
     private int id;
@@ -24,6 +16,10 @@ public class Project {
         this.description = description;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
+    }
+
+    public Project() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getId() {
