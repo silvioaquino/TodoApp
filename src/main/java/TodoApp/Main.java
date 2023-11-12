@@ -1,7 +1,7 @@
 package TodoApp;
 
 import java.sql.Connection;
-import util.connectionFactory;
+import util.ConnectionFactory;
 
 
 public class Main {
@@ -9,9 +9,9 @@ public class Main {
     
     public static void main(String[] args) {
        
-        Connection c = connectionFactory.getConnection();
+        Connection c = ConnectionFactory.getConnection();
         
-        connectionFactory.closeConnection(c);
+        ConnectionFactory.closeConnection(c);
         
     }
     

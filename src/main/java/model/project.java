@@ -10,7 +10,7 @@ import java.util.Date;
  *
  * @author Suporte
  */
-public class project {
+public class Project {
     
     private int id;
     private String name;
@@ -18,7 +18,7 @@ public class project {
     private Date createdAt;
     private Date updatedAt;
 
-    public project(int id, String name, String description, Date createdAt, Date updatedAt) {
+    public Project(int id, String name, String description, Date createdAt, Date updatedAt) {
         this.id = id;
         this.name = name;
         this.description = description;

@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 
 
 
-public class connectionFactory {
+public class ConnectionFactory {
     
     public static final String DRIVER = "com.mysql.jdbc.Driver";
-    public static final String URL = "jdbc:mysql://localhost:3306/todoapp";
+    public static final String URL = "jdbc:mysql://localhost:3306/TodoApp";
     public static final String USER = "root";
     public static final String PASS = "";
     
@@ -19,7 +19,7 @@ public class connectionFactory {
                 Class.forName(DRIVER);
                 return DriverManager.getConnection(URL, USER, PASS);
             } catch (Exception ex) {
-                throw new RuntimeException("Erro na conexão com o banco de Dados", ex);
+                throw new RuntimeException("Erro na conexï¿½o com o banco de Dados", ex);
             }
         }
         
@@ -29,7 +29,7 @@ public class connectionFactory {
                     connection.close();
                 }
             } catch (Exception ex) {
-                throw new RuntimeException("Erro ao fechar a conexão com o Banco de Dados", ex);
+                throw new RuntimeException("Erro ao fechar a conexï¿½o com o Banco de Dados", ex);
             }
         }
         
@@ -44,7 +44,7 @@ public class connectionFactory {
                 }
                 
             } catch (Exception ex) {
-                throw new RuntimeException("Erro ao fechar a conexão com o Banco de Dados", ex);
+                throw new RuntimeException("Erro ao fechar a conexï¿½o com o Banco de Dados", ex);
             }
         }
         
@@ -63,7 +63,7 @@ public class connectionFactory {
                 }
                 
             } catch (Exception ex) {
-                throw new RuntimeException("Erro ao fechar a conexão com o Banco de Dados", ex);
+                throw new RuntimeException("Erro ao fechar a conexï¿½o com o Banco de Dados", ex);
             }
         }
 }

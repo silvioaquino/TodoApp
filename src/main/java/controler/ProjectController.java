@@ -10,11 +10,11 @@ import java.util.List;
 import model.Task;
 import util.ConnectionFactory;
 
-public class TaskController {
+public class ProjectController {
     
     public void save(Task task) {
         
-        String sql = "INSERT INTO Tasks (idProject"
+        String sql = "INSERT INTO Project (idProject"
                 +"name,"
                 +"description,"
                 +"completed,"
